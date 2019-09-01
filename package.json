@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "webpack --config webpack-server.config.babel.js --watch --mode development"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "react": "^16.9.0",
