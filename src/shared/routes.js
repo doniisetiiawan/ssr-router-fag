@@ -1,6 +1,10 @@
-export const ROUTES = [
+const ROUTES = [
   {
     path: '/',
+    exact: true,
+  },
+  {
+    path: '/home',
     exact: true,
   },
   {
@@ -11,3 +15,5 @@ export const ROUTES = [
     path: '/github/:githubId',
   },
 ];
+
+export default ROUTES;

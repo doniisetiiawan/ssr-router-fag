@@ -4,7 +4,7 @@ import express from 'express';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
-import { ROUTES } from '../shared/routes';
+import ROUTES from '../shared/routes';
 import App from '../shared/App';
 
 const PORT = process.env.PORT || 3001;
@@ -36,7 +36,9 @@ app.get('*', (req, res) => {
     res.end();
   }
 
-  const context = {};
+  const context = {
+    message: 'From StaticRouter\'s context object',
+  };
   const reactMarkup = ReactDOMServer.renderToString(
     <StaticRouter context={context} location={req.url}>
       <App />

@@ -11,16 +11,19 @@ const App = () => (
         if (staticContext) {
           staticContext.status = 301;
         }
-        return (
-          <Redirect to="/home" />
-        );
+        return <Redirect to="/home" />;
       }}
     />
     <Route
       path="/home"
-      render={
-        () => <div>Inside Home Route at path /home</div>
-      }
+      render={({ staticContext }) => {
+        if (!__isBrowser__) {
+          return (
+            <div>Inside Home Route, Message - {staticContext.message}</div>
+          );
+        }
+        return <div>Inside Home Route, Message</div>;
+      }}
     />
   </div>
 );
