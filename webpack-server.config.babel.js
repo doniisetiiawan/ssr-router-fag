@@ -4,7 +4,7 @@ import nodemonPlugin from 'nodemon-webpack-plugin';
 import nodeExternals from 'webpack-node-externals';
 
 export default {
-  entry: './src/server/index.js',
+  entry: './src/server/index.jsx',
   target: 'node',
   externals: [nodeExternals()],
   output: {

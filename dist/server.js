@@ -81,20 +81,32 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/server/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/server/index.jsx");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/server/index.js":
-/*!*****************************!*\
-  !*** ./src/server/index.js ***!
-  \*****************************/
+/***/ "./src/server/index.jsx":
+/*!******************************!*\
+  !*** ./src/server/index.jsx ***!
+  \******************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! express */ \"express\");\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(express__WEBPACK_IMPORTED_MODULE_0__);\n\nvar PORT = process.env.PORT || 3001;\nvar app = express__WEBPACK_IMPORTED_MODULE_0___default()();\napp.get('*', function (req, res) {\n  res.send(\"\\n        <!DOCTYPE HTML>\\n        <html>\\n            <head>\\n                <title>React SSR example</title>\\n            </head>\\n            <body>\\n                <main id='app'>Rendered on the server side</main>\\n            </body>\\n        </html>\\n    \");\n});\napp.listen(PORT, function () {\n  console.log(\"SSR React Router app running at \".concat(PORT));\n});\n\n//# sourceURL=webpack:///./src/server/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! express */ \"express\");\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(express__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom_server__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _shared_App_App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/App/App */ \"./src/shared/App/App.jsx\");\n\n\n\n\nvar PORT = process.env.PORT || 3001;\nvar app = express__WEBPACK_IMPORTED_MODULE_0___default()();\napp.get('*', function (req, res) {\n  var reactMarkup = react_dom_server__WEBPACK_IMPORTED_MODULE_2___default.a.renderToString(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_shared_App_App__WEBPACK_IMPORTED_MODULE_3__[\"default\"], null));\n  res.send(\"\\n        <!DOCTYPE HTML>\\n        <html>\\n            <head>\\n                <title>React SSR example</title>\\n            </head>\\n            <body>\\n            <main id='app'>\".concat(reactMarkup, \"</main>\\n            </body>\\n        </html>\\n    \"));\n});\napp.listen(PORT, function () {\n  console.log(\"SSR React Router app running at \".concat(PORT));\n});\n\n//# sourceURL=webpack:///./src/server/index.jsx?");
+
+/***/ }),
+
+/***/ "./src/shared/App/App.jsx":
+/*!********************************!*\
+  !*** ./src/shared/App/App.jsx ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar App = function App() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"Inside React App (rendered with SSR)\");\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (App);\n\n//# sourceURL=webpack:///./src/shared/App/App.jsx?");
 
 /***/ }),
 
@@ -106,6 +118,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var expr
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"express\");\n\n//# sourceURL=webpack:///external_%22express%22?");
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "react" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"react\");\n\n//# sourceURL=webpack:///external_%22react%22?");
+
+/***/ }),
+
+/***/ "react-dom/server":
+/*!***********************************!*\
+  !*** external "react-dom/server" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"react-dom/server\");\n\n//# sourceURL=webpack:///external_%22react-dom/server%22?");
 
 /***/ })
 
