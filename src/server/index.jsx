@@ -17,7 +17,10 @@ app.get('*', (req, res) => {
     </StaticRouter>,
   );
 
-  res.send(`
+  if (context.url) {
+    res.redirect(context.status, `http://${req.headers.host}${context.url}`);
+  } else {
+    res.send(`
         <!DOCTYPE HTML>
         <html>
             <head>
@@ -28,6 +31,7 @@ app.get('*', (req, res) => {
             </body>
         </html>
     `);
+  }
 });
 
 app.listen(PORT, () => {

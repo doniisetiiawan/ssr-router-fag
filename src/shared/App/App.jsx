@@ -1,13 +1,20 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 const App = () => (
   <div>
     Inside React App (rendered with SSR)
     <Route
-      exact
       path="/"
-      render={() => <div>Inside Route at path /</div>}
+      exact
+      render={({ staticContext }) => {
+        if (staticContext) {
+          staticContext.status = 301;
+        }
+        return (
+          <Redirect to="/home" />
+        );
+      }}
     />
     <Route
       path="/home"
