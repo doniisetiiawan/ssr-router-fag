@@ -11,6 +11,8 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+app.use(express.static('dist/public'))
+
 app.get('*', (req, res) => {
   //   const isRouteAvailable = matchPath(req.url, {
   //     path: "/dashboard/",
@@ -26,7 +28,10 @@ app.get('*', (req, res) => {
     res.send(`
         <!DOCTYPE HTML>
         <html>
-            <head><title>React SSR example</title></head>
+            <head>
+            <title>React SSR example</title>
+            <script src='/bundle.js' defer></script>
+            </head>
             <body>
                 <main id='app'>
                 Requested page '${req.url}' not found
